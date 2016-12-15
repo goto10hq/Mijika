@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mijika", "Mijika\Mijika.csproj", "{32E47179-7C30-418C-989E-83C70C511287}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Example\Example.csproj", "{4DCFE9D7-4AD5-4C67-A9CD-2AD1F8709711}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32E47179-7C30-418C-989E-83C70C511287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32E47179-7C30-418C-989E-83C70C511287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32E47179-7C30-418C-989E-83C70C511287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32E47179-7C30-418C-989E-83C70C511287}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DCFE9D7-4AD5-4C67-A9CD-2AD1F8709711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DCFE9D7-4AD5-4C67-A9CD-2AD1F8709711}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DCFE9D7-4AD5-4C67-A9CD-2AD1F8709711}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DCFE9D7-4AD5-4C67-A9CD-2AD1F8709711}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
