@@ -19,5 +19,11 @@ namespace Mijika.Tokens
 
         [JsonProperty("duration")]
         public TimeSpan Duration { get; set; }
+
+        [JsonProperty("output_url")]
+        public string OutputUrl { get; set; }
+
+        [JsonProperty("error_url")]
+        public string ErrorUrl { get; set; }
     }
 }

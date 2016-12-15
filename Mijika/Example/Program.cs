@@ -45,6 +45,7 @@ namespace Example
                         foreach (var h in history.Runs)
                         {
                             Console.Out.WriteLine($"  {h.Id} at {h.StartTime} for {h.Duration}");
+                            //var log = kudu.GetLog(h.OutputUrl);                            
                         }
                     }
                 }
@@ -57,8 +58,8 @@ namespace Example
                 }
             }
 
-            Console.Out.WriteLine($"- InvokeWebJob {jobs[0].Name} {"-".PadRight(50, '-')}");
-            kudu.InvokeTriggeredJob(jobs[0].Name);
+            //Console.Out.WriteLine($"- InvokeWebJob {jobs[0].Name} {"-".PadRight(50, '-')}");
+            //kudu.InvokeTriggeredJob(jobs[0].Name);
         }
     }
 }

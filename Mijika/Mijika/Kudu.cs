@@ -87,7 +87,17 @@ namespace Mijika
         public void InvokeTriggeredJob(string name)
         {
             var rest = new RestApi(BaseUrl, Username, Password);
-            var x = rest.Post<string>($"/api/triggeredwebjobs/{name}/run");
+            rest.Post<string>($"/api/triggeredwebjobs/{name}/run");
         }
+
+        /// <summary>
+        /// Get log.
+        /// </summary>
+        /// <param name="outputLogUrl">Full url to log.</param>
+        public string GetLog(string outputLogUrl)
+        {
+            var rest = new RestApi(outputLogUrl, Username, Password);
+            return rest.Get();
+        }        
     }
 }

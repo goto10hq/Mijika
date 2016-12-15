@@ -29,6 +29,26 @@ namespace Mijika
             Tools.SetJsonDefaultSettings();
         }
 
+        public string Get()
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(BaseUrl);
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.DefaultRequestHeaders.Authorization = Authorization;
+
+                var response = client.GetAsync(BaseUrl).Result;
+
+                if (response.IsSuccessStatusCode)
+                {                    
+                    return response.Content.ReadAsStringAsync().Result;                    
+                }
+            }
+
+            return null;
+        }
+
         public T Get<T>(string url)
         {
             using (var client = new HttpClient())
@@ -41,7 +61,7 @@ namespace Mijika
                 var response = client.GetAsync(url).Result;
                 
                 if (response.IsSuccessStatusCode)
-                {
+                {     
                     var value = JsonConvert.DeserializeObject<T>(response.Content.ReadAsStringAsync().Result);
                     return value;
                 }
