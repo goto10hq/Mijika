@@ -42,10 +42,20 @@ namespace Example
                     {
                         Console.Out.WriteLine("  History:");
 
+                        var first = true;
+
                         foreach (var h in history.Runs)
                         {
                             Console.Out.WriteLine($"  {h.Id} at {h.StartTime} for {h.Duration}");
-                            //var log = kudu.GetLog(h.OutputUrl);                            
+
+                            if (first)
+                            {
+                                Console.Out.WriteLine($"- Output log for the latest one {"-".PadRight(50, '-')}");
+                                var log = kudu.GetLog(h.OutputUrl);
+                                Console.Out.WriteLine(log);
+                                first = false;
+                                Console.Out.WriteLine($"- Output log for the latest one {"-".PadRight(50, '-')}");
+                            }
                         }
                     }
                 }
