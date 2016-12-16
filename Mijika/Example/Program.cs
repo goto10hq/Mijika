@@ -69,7 +69,8 @@ namespace Example
             }
 
             Console.Out.WriteLine($"- InvokeWebJob {jobs[0].Name} {"-".PadRight(50, '-')}");
-            var result = kudu.InvokeTriggeredJob(jobs[0].Name, "test=true;type=debug");
+            //var result = kudu.InvokeTriggeredJob(jobs[0].Name, "test=true;type=debug");
+            var result = kudu.InvokeTriggeredJob(jobs[0].Name);
             Console.Out.WriteLine($"  Location: {result}");
         }
     }
