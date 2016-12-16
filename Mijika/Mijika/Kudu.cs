@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Web;
 using Mijika.Tokens;
 
 namespace Mijika
@@ -84,10 +85,30 @@ namespace Mijika
         /// Invoke triggered job.
         /// </summary>
         /// <param name="name">Job name.</param>
-        public void InvokeTriggeredJob(string name)
+        /// <returns>Location.</returns>
+        public System.Uri InvokeTriggeredJob(string name)
+        {
+            return InvokeTriggeredJob(name, null);
+        }
+
+        /// <summary>
+        /// Invoke triggered job.
+        /// </summary>
+        /// <param name="name">Job name.</param>
+        /// <param name="arguments">Arguments.</param>
+        /// <returns>Location.</returns>
+        /// <remarks>Arguments are accessible as the WEBJOBS_COMMAND_ARGUMENTS environment variable.</remarks>
+        public System.Uri InvokeTriggeredJob(string name, string arguments)
         {
             var rest = new RestApi(BaseUrl, Username, Password);
-            rest.Post<string>($"/api/triggeredwebjobs/{name}/run");
+            var arg = string.Empty;
+
+            if (!string.IsNullOrWhiteSpace(arguments))
+                arg = "?arguments=" + HttpUtility.UrlEncode(arguments);
+
+            var headers = rest.Post<System.Net.Http.Headers.HttpResponseHeaders>($"/api/triggeredwebjobs/{name}/run{arg}");
+
+            return headers?.Location;
         }
 
         /// <summary>

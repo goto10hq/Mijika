@@ -64,12 +64,13 @@ namespace Example
                 {
                     Console.Out.WriteLine($"- GetWebJob: {job.Name} {"-".PadRight(50, '-')}");
                     var j = kudu.GetContinuousWebJob(job.Name);
-                    Console.Out.WriteLine($"  Continuous job: {j.Name}");                    
+                    Console.Out.WriteLine($"  Continuous job: {j.Name}");
                 }
             }
 
-            //Console.Out.WriteLine($"- InvokeWebJob {jobs[0].Name} {"-".PadRight(50, '-')}");
-            //kudu.InvokeTriggeredJob(jobs[0].Name);
+            Console.Out.WriteLine($"- InvokeWebJob {jobs[0].Name} {"-".PadRight(50, '-')}");
+            var result = kudu.InvokeTriggeredJob(jobs[0].Name, "test=true;type=debug");
+            Console.Out.WriteLine($"  Location: {result}");
         }
     }
 }

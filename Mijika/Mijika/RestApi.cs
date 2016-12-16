@@ -83,6 +83,9 @@ namespace Mijika
                 
                 if (response.IsSuccessStatusCode)
                 {
+                    if (typeof(T) == typeof(HttpResponseHeaders))
+                        return (T)Convert.ChangeType(response.Headers, typeof(T));
+
                     var value = JsonConvert.DeserializeObject<T>(response.Content.ReadAsStringAsync().Result);
                     return value;
                 }
