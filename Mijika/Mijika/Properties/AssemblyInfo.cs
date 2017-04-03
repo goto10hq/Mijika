@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Mijika")]
 [assembly: AssemblyDescription("Little puppy for managing webjobs in Kudu.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Goto10")]
 [assembly: AssemblyProduct("Mijika")]
 [assembly: AssemblyCopyright("Copyright © 2016 Goto10")]
 [assembly: AssemblyTrademark("")]

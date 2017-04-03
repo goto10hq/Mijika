@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Web;
 using Mijika.Tokens;
 
 namespace Mijika
@@ -104,7 +103,7 @@ namespace Mijika
             var arg = string.Empty;
 
             if (!string.IsNullOrWhiteSpace(arguments))
-                arg = "?arguments=" + HttpUtility.UrlEncode(arguments);
+                arg = "?arguments=" + System.Net.WebUtility.UrlEncode(arguments);
 
             var headers = rest.Post<System.Net.Http.Headers.HttpResponseHeaders>($"/api/triggeredwebjobs/{name}/run{arg}");
 
