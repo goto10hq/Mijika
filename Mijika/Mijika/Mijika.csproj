@@ -1,9 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.5</TargetFramework>
+    <TargetFramework>netstandard1.3</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
+
+ <PropertyGroup>
+     <PackageId>Mijika</PackageId>
+     <PackageVersion>1.1.0</PackageVersion>
+     <Authors>Goto10</Authors>
+     <Description>Little puppy for managing webjobs in Kudu.</Description>
+     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+     <Copyright>Copyright © 2016-2017 Goto10</Copyright>
+     <PackageTags>azure kudu goto10</PackageTags>
+ </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
