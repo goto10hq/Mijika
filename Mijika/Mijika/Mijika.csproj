@@ -5,19 +5,18 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
- <PropertyGroup>
-     <PackageId>Mijika</PackageId>
-     <PackageVersion>1.1.0</PackageVersion>
-     <Authors>Goto10</Authors>
-     <Description>Little puppy for managing webjobs in Kudu.</Description>
-     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-     <Copyright>Copyright © 2016-2017 Goto10</Copyright>
-     <PackageTags>azure kudu goto10</PackageTags>
-     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
- </PropertyGroup>
+  <PropertyGroup>
+    <PackageId>Mijika</PackageId>
+    <PackageVersion>1.3.0</PackageVersion>
+    <Authors>Goto10</Authors>
+    <Description>Little puppy for managing webjobs in Kudu.</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Copyright>Copyright © 2016-2018 Goto10</Copyright>
+    <PackageTags>azure kudu goto10</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
   </ItemGroup>
-
 </Project>
